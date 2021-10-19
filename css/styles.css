@@ -1,0 +1,17 @@
+.search__textbox {
+	width: 100%;
+	margin: 5px auto 20px;
+	padding: 5px 10px;
+	border: solid 1px black;
+	border-radius: 10px;
+}
+.search__text {
+	text-align: center;
+	margin: 20px auto 0;
+	font-size: 20px;
+	padding: 0 5px;
+}
+.form-check-input:checked {
+	background-color: #198754;
+	border-color: #0b3220;
+}
