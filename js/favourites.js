@@ -6,47 +6,46 @@ import {
 console.log(getStorageItem('articles'));
 
 let favArticles = getStorageItem('articles');
-
 let articlesMessage = document.querySelector('.articles__message');
 
-if (favArticles.length === 0) {
-	articlesMessage.style.display = 'block';
-} else {
-	articlesMessage.style.display = 'none';
+function showOrHideArticlesMessage(
+	arrayElementFromLocalStorage,
+	domElementWithTheMessage
+) {
+	if (arrayElementFromLocalStorage.length === 0) {
+		domElementWithTheMessage.style.display = 'block';
+	} else {
+		domElementWithTheMessage.style.display = 'none';
+	}
 }
 
-function writeToDom(domElementFromHtml, arrayImGoingToGoTrough) {
+function writeToDomFromLocalStorage(
+	domElementFromHtml,
+	arrayImGoingToGoTrough
+) {
+	showOrHideArticlesMessage(arrayImGoingToGoTrough, articlesMessage);
+
 	domElementFromHtml.innerHTML = '';
-	arrayImGoingToGoTrough.forEach((element) => {
+	arrayImGoingToGoTrough.forEach((element, iteration) => {
 		domElementFromHtml.innerHTML += `
         <tr>
-            <th>${element.id}</th>
+            <th>${iteration + 1}</th>
             <td>${element.title}</td>
-            <td>${element.summary}</td>				
-            <td class="d-flex justify-content-center">
-                <div class="delete">
-                    <i class="fas fa-trash-alt" data-id="${element.id}" data-title="${element.title}" data-summary="${element.summary}" ></i>
-                </div>
-            </td>
+            <td>${element.summary}</td>			         
         </tr>
     `;
 	});
 
-	let deleteButtons = document.querySelectorAll('.fa-trash-alt');
+	let deleteButton = document.querySelector('.clearButton');
 
-	deleteButtons.forEach((deleteButton) => {
-		deleteButton.onclick = function () {
-			console.log('A button was clicked the id is: ', deleteButton.dataset.id);
+	deleteButton.onclick = function () {
+		localStorage.clear();
+		arrayImGoingToGoTrough = [];
 
-			let removedArticles = favArticles.filter(
-				(productObject) => productObject.id !== deleteButton.dataset.id
-			);
-			saveToLocalStorage('articles', removedArticles);
-			writeToDom(articlesContainer, favArticles);
-		};
-	});
+		writeToDomFromLocalStorage(domElementFromHtml, arrayImGoingToGoTrough);
+	};
 }
 
 let articlesContainer = document.querySelector('.tableBody');
 
-writeToDom(articlesContainer, favArticles);
+writeToDomFromLocalStorage(articlesContainer, favArticles);
