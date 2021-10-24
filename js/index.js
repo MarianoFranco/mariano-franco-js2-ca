@@ -6,7 +6,6 @@ async function getItemsFromApi() {
 	let response = await axios.get(`${BASE_URL}/articles`);
 
 	let listOfArticles = response.data;
-	console.log(listOfArticles);
 
 	let articlesContainer = document.querySelector('.tableBody');
 

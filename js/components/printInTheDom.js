@@ -3,6 +3,7 @@ import {
 	getStorageItem,
 } from '../libs/localStorageHelpers.js';
 import alert from './alert.js';
+import { BASE_URL, headers } from '../configs/configs.js';
 
 export const printInTheDom = (domElementInHtml, arrayImGoingToGoTrough) => {
 	domElementInHtml.innerHTML = '';
@@ -39,7 +40,6 @@ export const printInTheDom = (domElementInHtml, arrayImGoingToGoTrough) => {
 			};
 			let articles = getStorageItem('articles');
 
-			console.log(localStorageObject.id);
 			let isInStorage = articles.find(
 				(productObject) => productObject.id === localStorageObject.id
 			);
@@ -114,12 +114,14 @@ export const printInTheDomTableToEdit = (
 
 	deleteButtons.forEach((deleteBtn) => {
 		deleteBtn.onclick = async function () {
-			let response = await axios.delete(
+			let responseDelete = await axios.delete(
 				`${BASE_URL}/articles/${deleteBtn.dataset.id}`,
 				headers
 			);
-			console.log(response);
+			console.log(responseDelete);
+
 			printInTheDomTableToEdit(domElementFromHtml, arrayImGoingToGoTrough);
+			alert('alert-success', 'Your article has been deleted succesfully');
 		};
 	});
 };

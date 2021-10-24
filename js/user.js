@@ -1,5 +1,7 @@
-import { BASE_URL } from './configs/configs.js';
+import { BASE_URL, headers } from './configs/configs.js';
 import { printInTheDomTableToEdit } from './components/printInTheDom.js';
+import alert from './components/alert.js';
+import { getStorageItem } from './libs/localStorageHelpers.js';
 
 async function getArticlesToModify() {
 	let response = await axios.get(`${BASE_URL}/articles`);

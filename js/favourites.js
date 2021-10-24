@@ -1,13 +1,5 @@
-import {
-	saveToLocalStorage,
-	getStorageItem,
-} from './libs/localStorageHelpers.js';
-import {
-	printInTheDom,
-	printInTheDomWithoutIcon,
-} from './components/printInTheDom.js';
-
-console.log(getStorageItem('articles'));
+import { getStorageItem } from './libs/localStorageHelpers.js';
+import { printInTheDomWithoutIcon } from './components/printInTheDom.js';
 
 let favArticles = getStorageItem('articles');
 

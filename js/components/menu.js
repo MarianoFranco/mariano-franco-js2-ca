@@ -31,8 +31,8 @@ let menu = document.querySelector('.menu');
 							<a class="nav-link" href="user.html">Modify Articles</a>
 						</li>					
 					</ul>
-					<div>
-						<p class="fs-4"> Welcome <span class=" font-weight-bold text-light">${getUserName}</span></p>
+					<div class="d-flex align-items-center ">
+						<p class="px-3 m-auto fs-5"> Welcome <span class=" font-weight-bold text-light">${getUserName}</span></p>
 					</div>	
 					<button class="logout btn btn-danger">Logout</button>								
 				</div>									

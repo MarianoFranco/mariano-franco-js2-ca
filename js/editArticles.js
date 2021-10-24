@@ -24,7 +24,7 @@ async function getAnArticle() {
 
 getAnArticle();
 
-submitBtn.onsubmit = async function (event) {
+submitBtn.onclick = async function (event) {
 	event.preventDefault();
 	let updatedArticle = {
 		title: title.value,
