@@ -10,12 +10,6 @@ export const getStorageItem = function (key) {
 	}
 };
 
-export const getUser = function (userKey) {
-	// We will only ever access this funtion on a page thats needs to
-	// access the api
-	// It makes sense to test here and check if there is a user.
-	// If there isnt send them to the login page.
-	return JSON.parse(localStorage.getItem(userKey));
+export const getUser = function (key) {
+	return localStorage.getItem(key);
 };
-
-// Get JWT Token

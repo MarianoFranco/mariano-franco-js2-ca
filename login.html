@@ -12,33 +12,52 @@
 		/>
 
 		<link rel="stylesheet" href="css/styles.css" />
-		<title>Document</title>
+		<title>Login Page</title>
 	</head>
 	<body>
 		<header>
 			<div class="menu"></div>
 		</header>
-		<main>
-			<h1 class="text-center text-success">Favourites articles</h1>
+		<body>
 			<div class="container">
-				<div class="row alert"></div>
-				<div class="row articles">
+				<div class="row">
 					<div class="col-sm-12">
-						<table class="table table-striped table-success">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Article title</th>
-									<th scope="col">Article description</th>
-								</tr>
-							</thead>
-							<tbody class="tableBody"></tbody>
-						</table>
-						<button class="btn btn-danger clearButton">Clear All</button>
+						<div class="alert"></div>
+					</div>
+					<div class="col-sm-12">
+						<h1>Welcome to the login page</h1>
+						<div class="alert"></div>
+					</div>
+					<div class="col-sm-6">
+						<form class="form">
+							<div class="mb-3">
+								<label for="exampleInputEmail1" class="form-label"
+									>Email address</label
+								>
+								<input
+									type="input"
+									class="form-control"
+									id="email"
+									autocomplete="on"
+								/>
+							</div>
+							<div class="mb-3">
+								<label for="exampleInputPassword1" class="form-label"
+									>Password</label
+								>
+								<input
+									type="password"
+									class="form-control"
+									id="password"
+									autocomplete="on"
+								/>
+							</div>
+							<button type="submit" class="btn btn-success">Login</button>
+						</form>
 					</div>
 				</div>
 			</div>
-		</main>
+		</body>
 		<footer></footer>
 		<script
 			src="https://kit.fontawesome.com/4a5f897340.js"
@@ -51,6 +70,6 @@
 		></script>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script type="module" src="js/components/menu.js"></script>
-		<script type="module" src="js/favourites.js"></script>
+		<script type="module" src="js/login.js"></script>
 	</body>
 </html>

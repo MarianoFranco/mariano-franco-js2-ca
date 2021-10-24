@@ -12,34 +12,49 @@
 		/>
 
 		<link rel="stylesheet" href="css/styles.css" />
-		<title>Document</title>
+		<title>Edit Articles</title>
 	</head>
 	<body>
 		<header>
 			<div class="menu"></div>
 		</header>
 		<main>
-			<h1 class="text-center text-success">Favourites articles</h1>
 			<div class="container">
-				<div class="row alert"></div>
-				<div class="row articles">
+				<div class="col-sm-12">
+					<div class="alert"></div>
+				</div>
+				<div class="row">
 					<div class="col-sm-12">
-						<table class="table table-striped table-success">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Article title</th>
-									<th scope="col">Article description</th>
-								</tr>
-							</thead>
-							<tbody class="tableBody"></tbody>
-						</table>
-						<button class="btn btn-danger clearButton">Clear All</button>
+						<h1>Update an article</h1>
+						<div class="col-sm-6">
+							<form class="form">
+								<div class="form-group">
+									<label for="title">Article title</label>
+									<input type="text" class="form-control" id="title" />
+								</div>
+								<div class="form-group">
+									<label for="description">Article description</label>
+									<textarea
+										type="text"
+										class="form-control"
+										id="description"
+										cols="4"
+										rows="5"
+									></textarea>
+								</div>
+								<div class="form-group">
+									<label for="author">Author</label>
+									<input type="text" class="form-control" id="author" />
+								</div>
+								<button type="submit" class="btn btn-success submitBtn">
+									Update article
+								</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</main>
-		<footer></footer>
 		<script
 			src="https://kit.fontawesome.com/4a5f897340.js"
 			crossorigin="anonymous"
@@ -51,6 +66,6 @@
 		></script>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script type="module" src="js/components/menu.js"></script>
-		<script type="module" src="js/favourites.js"></script>
+		<script type="module" src="js/editArticles.js"></script>
 	</body>
 </html>

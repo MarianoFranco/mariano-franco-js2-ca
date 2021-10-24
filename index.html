@@ -12,35 +12,11 @@
 		/>
 
 		<link rel="stylesheet" href="css/styles.css" />
-		<title>Document</title>
+		<title>Home page</title>
 	</head>
 	<body>
 		<header>
-			<nav class="navbar navbar-expand-lg navbar-light bg-success">
-				<div class="container">
-					<a class="navbar-brand" href="index.html">Articles list</a>
-					<button
-						class="navbar-toggler"
-						type="button"
-						data-bs-toggle="collapse"
-						data-bs-target="#navbarSupportedContent"
-						aria-controls="navbarSupportedContent"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
-					>
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="index.html">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="favourites.html">Favourites</a>
-							</li>							
-					</div>
-				</div>
-			</nav>
+			<div class="menu"></div>
 		</header>
 		<main>
 			<div class="container">
@@ -63,8 +39,9 @@
 							<thead>
 								<tr>
 									<th scope="col">#</th>
-									<th scope="col">Article name</th>
+									<th scope="col">Article title</th>
 									<th scope="col">Article description</th>
+									<th scope="col">Author</th>
 									<th scope="col">Add or remove article</th>
 								</tr>
 							</thead>
@@ -85,7 +62,7 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+		<script type="module" src="js/components/menu.js"></script>
 		<script type="module" src="js/index.js"></script>
 	</body>
 </html>

@@ -11,3 +11,17 @@
 	font-size: 20px;
 	padding: 0 5px;
 }
+.article__link {
+	color: #198754;
+	cursor: pointer;
+	margin-left: 15px;
+}
+
+.article__link:hover {
+	color: red;
+}
+.article__icon:hover {
+	transition: all 0.1s ease-in-out;
+	transform: scale(1.1);
+	cursor: pointer;
+}
