@@ -5,7 +5,6 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get('id');
 
-console.log(id);
 let title = document.querySelector('#title');
 let description = document.querySelector('#description');
 let author = document.querySelector('#author');
@@ -15,7 +14,6 @@ async function getAnArticle() {
 	const response = await axios.get(`${BASE_URL}/articles/${id}`);
 
 	let articles = response.data;
-	console.log(articles);
 
 	title.value = articles.title;
 	description.value = articles.summary;
@@ -39,6 +37,4 @@ submitBtn.onclick = async function (event) {
 	);
 
 	alert('alert-success', 'Your article has been updated');
-
-	console.log(response);
 };

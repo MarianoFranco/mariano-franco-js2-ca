@@ -30,7 +30,6 @@ export const printInTheDom = (domElementInHtml, arrayImGoingToGoTrough) => {
 
 	toggleButtons.forEach((element) => {
 		element.onclick = function () {
-			console.log(element);
 			element.classList.toggle('fas');
 			let localStorageObject = {
 				id: element.dataset.id,
@@ -53,7 +52,6 @@ export const printInTheDom = (domElementInHtml, arrayImGoingToGoTrough) => {
 				);
 
 				saveToLocalStorage('articles', removedArticles);
-				console.log(removedArticles);
 			}
 		};
 	});
@@ -118,9 +116,9 @@ export const printInTheDomTableToEdit = (
 				`${BASE_URL}/articles/${deleteBtn.dataset.id}`,
 				headers
 			);
-			console.log(responseDelete);
 
 			printInTheDomTableToEdit(domElementFromHtml, arrayImGoingToGoTrough);
+
 			alert('alert-success', 'Your article has been deleted succesfully');
 		};
 	});
