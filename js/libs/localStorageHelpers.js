@@ -11,5 +11,7 @@ export const getStorageItem = function (key) {
 };
 
 export const getUser = function (key) {
+	console.log(typeof localStorage.getItem(key));
+
 	return localStorage.getItem(key);
 };
