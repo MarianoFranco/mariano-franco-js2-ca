@@ -1,2 +1,2 @@
-# Campshop store - semester project 2
+# Project with bootstrap
 
